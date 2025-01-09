@@ -39,7 +39,7 @@
           </material>
         </visual>
 
-        <!-- <collision name='one_two'>
+        <collision name='one_two'>
           <pose>-1.1 0 0.25 0 0 0</pose>
           <geometry>
             <cylinder>
@@ -73,7 +73,7 @@
               <name>Gazebo/White</name>
             </script>
           </material>
-        </visual> -->
+        </visual>
 
         <collision name='one_three'>
           <pose>-1.1 1.1 0.25 0 0 0</pose>
@@ -111,7 +111,7 @@
           </material>
         </visual>
 
-        <!-- <collision name='two_one'>
+        <collision name='two_one'>
           <pose>0 -1.1 0.25 0 0 0</pose>
           <geometry>
             <cylinder>
@@ -145,7 +145,7 @@
               <name>Gazebo/White</name>
             </script>
           </material>
-        </visual> -->
+        </visual>
 
         <collision name='two_two'>
           <pose>0 0 0.25 0 0 0</pose>
@@ -183,7 +183,7 @@
           </material>
         </visual>
 
-        <!-- <collision name='two_three'>
+        <collision name='two_three'>
           <pose>0 1.1 0.25 0 0 0</pose>
           <geometry>
             <cylinder>
@@ -217,7 +217,7 @@
               <name>Gazebo/White</name>
             </script>
           </material>
-        </visual> -->
+        </visual>
 
         <collision name='three_one'>
           <pose>1.1 -1.1 0.25 0 0 0</pose>
@@ -255,7 +255,7 @@
           </material>
         </visual>
 
-        <!-- <collision name='three_two'>
+        <collision name='three_two'>
           <pose>1.1 0 0.25 0 0 0</pose>
           <geometry>
             <cylinder>
@@ -289,7 +289,7 @@
               <name>Gazebo/White</name>
             </script>
           </material>
-        </visual> -->
+        </visual>
 
         <collision name='three_three'>
           <pose>1.1 1.1 0.25 0 0 0</pose>
