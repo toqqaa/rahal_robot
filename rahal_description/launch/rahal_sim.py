@@ -8,7 +8,8 @@ from launch.actions import IncludeLaunchDescription
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, Command
-
+from launch.actions import DeclareLaunchArgument,SetEnvironmentVariable
+from pathlib import Path
 from launch_ros.actions import Node
 from math import radians
 from launch_ros.parameter_descriptions import ParameterValue
@@ -19,7 +20,13 @@ def generate_launch_description():
     pkg_project_description = get_package_share_directory('rahal_description')
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
-
+    gz_resource_path = SetEnvironmentVariable(
+        name='GZ_SIM_RESOURCE_PATH',
+        value=':'.join([
+            os.path.join(pkg_project_description,"worlds"),
+            str(Path(pkg_project_description).parent.resolve())
+        ])
+    )
 
     # Load the SDF file from "description" package
     sdf_file  =  os.path.join(pkg_project_description, 'models', 'robot.sdf')
@@ -99,6 +106,7 @@ def generate_launch_description():
         arguments=['-d' + os.path.join(pkg_project_description, 'rviz', 'rahal.rviz')]
     )
     return LaunchDescription([
+        gz_resource_path,
         gz_sim,
         bridge,
         spawn_robot_node,
