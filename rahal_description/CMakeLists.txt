@@ -44,6 +44,9 @@ install(DIRECTORY meshes/
 install(DIRECTORY textures/
 DESTINATION share/${PROJECT_NAME}/textures)
 
+install(DIRECTORY turtlebot3_world/
+DESTINATION share/${PROJECT_NAME}/turtlebot3_world)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
