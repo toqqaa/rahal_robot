@@ -504,7 +504,7 @@
 
 
     <link name='camera_link'>
-  <pose relative_to='base_link'>0.28252 0.0 0.037 0 -0.35 0</pose>
+  <pose relative_to='base_link'>0.28252 0.0 0.031 0 -0.35 0</pose>
   <inertial>
     <pose>0 0 0 0 0 0</pose>
     <mass>0.15</mass>
@@ -520,9 +520,10 @@
   <visual name='cam_visual'>
     <pose>0 0 0 0 0 0</pose>
     <geometry>
-      <box>
-        <size>0.02 0.06 0.02</size>
-      </box>
+      <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://rahal_description/meshes/depth_camera.STL</uri>
+          </mesh>
     </geometry>
     <material>
       <diffuse>0.2 0.2 0.2 1.0</diffuse>
@@ -532,12 +533,13 @@
   <collision name='cam_collision'>
     <pose>0 0 0 0 0 0</pose>
     <geometry>
-      <box>
-        <size>0.02 0.06 0.02</size>
-      </box>
+      <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://rahal_description/meshes/depth_camera.STL</uri>
+          </mesh>
     </geometry>
   </collision>
-  <sensor name="camera" type="camera">
+  <sensor name="rgb_camera" type="camera">
     <pose>0.28252 0.0 0.029009 0 0 0</pose>
     <camera>
       <horizontal_fov>1.367</horizontal_fov>
@@ -556,6 +558,34 @@
     <visualize>1</visualize>
     <topic>rgb_image</topic>
   </sensor>
+  <sensor name="depth" type="depth_camera">
+      <pose>0 0.0 0 0 0 0</pose>
+				<camera>
+					<horizontal_fov>1.48702</horizontal_fov>
+					<image>
+						<width>1280</width>
+						<height>720</height>
+            <format>R_FLOAT32</format>
+					</image>
+					<clip>
+						<near>0.1</near>
+						<far>100</far>
+					</clip>
+					<noise>
+						<type>gaussian</type>
+						<mean>0</mean>
+						<stddev>0.1</stddev>
+					</noise>
+				</camera>
+    <gz_frame_id>camera_link</gz_frame_id>
+    <always_on>1</always_on>
+    <update_rate>10</update_rate>
+    <visualize>1</visualize>
+    <topic>/camera/depth/points</topic>
+         
+
+      </sensor>
+
 </link>
 
 

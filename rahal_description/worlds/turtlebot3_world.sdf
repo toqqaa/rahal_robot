@@ -147,7 +147,7 @@
     
     
     <include>
-      <pose>1.5 0 0.09 0 0 3.14</pose>
+      <pose>1.8 0 0.09 0 0 3.14</pose>
       <uri>model://rahal_description/models/robot.sdf</uri>
     </include> 
     <include>
