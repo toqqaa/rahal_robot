@@ -41,7 +41,7 @@ source install/setup.bash
 To launch the Rahal Robot's description in the simulation environment, use the following command:
 
 ```bash
-ros2 launch rahal_description rahal_sim.py
+ros2 launch rahal_description rahal_sim.launch.py
 ```
 
 #### Visualizing LiDAR in Gazebo Sim
@@ -96,7 +96,6 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ![Rahal Robot](images/rahal.gif)
 
-
 ## Saving the Map
 
 After completing SLAM, you can save the generated map for later use. Follow these steps:
@@ -107,7 +106,6 @@ After completing SLAM, you can save the generated map for later use. Follow thes
 mkdir -p src/maps
 ```
 
-
 ### 2. Save the Map
 
 Use the `map_saver_cli` tool from the `nav2_map_server` package to save the map. Replace `my_map` with your desired map name:
@@ -115,7 +113,6 @@ Use the `map_saver_cli` tool from the `nav2_map_server` package to save the map.
 ```
 ros2 run nav2_map_server map_saver_cli -f src/maps/my_map
 ```
-
 
 ## Additional Notes
 

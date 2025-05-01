@@ -504,7 +504,7 @@
 
 
     <link name='camera_link'>
-  <pose relative_to='base_link'>0.28252 0.0 0.031 0 -0.35 0</pose>
+  <pose relative_to='base_link'>0.28252 0.0 0.031 0 0 0</pose>
   <inertial>
     <pose>0 0 0 0 0 0</pose>
     <mass>0.15</mass>
@@ -581,7 +581,7 @@
     <always_on>1</always_on>
     <update_rate>10</update_rate>
     <visualize>1</visualize>
-    <topic>/camera/depth/points</topic>
+    <topic>/camera/depth</topic>
          
 
       </sensor>

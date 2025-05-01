@@ -69,13 +69,7 @@ def generate_launch_description():
  )
 
 
-    # joint_state_publisher_node = Node(
-    #     package="joint_state_publisher",
-    #     executable="joint_state_publisher",
-    #     parameters=[{'use_sim_time': True}],
-    #     output='screen'
-    # )
-    # Bridge ROS topics and Gazebo messages for establishing communication
+
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
@@ -113,7 +107,6 @@ def generate_launch_description():
         robot_state_publisher,
         rviz_node,
         joint_state_publisher_node,
-        # joint_state_publisher_gui_nod
     
     ])
 
